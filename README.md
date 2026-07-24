@@ -1,5 +1,9 @@
 # shotmark
 
+<p align="center">
+  <img src="./assets/shotmark-cover.jpeg" alt="shotmark - Capture · Draw · Copy · Download" width="100%" />
+</p>
+
 [![npm version](https://img.shields.io/npm/v/shotmark)](https://www.npmjs.com/package/shotmark)
 [![license](https://img.shields.io/npm/l/shotmark)](./LICENSE)
 [![bundle size](https://img.shields.io/bundlephobia/minzip/shotmark)](https://bundlephobia.com/package/shotmark)

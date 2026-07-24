@@ -1,5 +1,9 @@
 # shotmark
 
+<p align="center">
+  <img src="./assets/shotmark-cover.jpeg" alt="shotmark - Capture · Draw · Copy · Download" width="100%" />
+</p>
+
 [English](./README.md)
 
 轻量网页截图标注组件（React），支持框选、绘制、复制、下载与主题切换。一行启动，零 UI 库依赖。
