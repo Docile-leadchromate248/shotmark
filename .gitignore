@@ -1,0 +1,10 @@
+node_modules/
+dist/
+*.tsbuildinfo
+storybook-static/
+coverage/
+.DS_Store
+
+# Dev-flow workspace artifacts (auto-generated)
+workspaces/current-workspace
+workspaces/*/session/conversations/
