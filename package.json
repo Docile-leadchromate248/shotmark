@@ -20,6 +20,10 @@
   ],
   "author": "river <heyrivergo@gmail.com>",
   "license": "MIT",
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/riverdone"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/riverdone/shotmark.git"

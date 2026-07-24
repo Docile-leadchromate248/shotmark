@@ -3,10 +3,11 @@
 [![npm version](https://img.shields.io/npm/v/shotmark)](https://www.npmjs.com/package/shotmark)
 [![license](https://img.shields.io/npm/l/shotmark)](./LICENSE)
 [![bundle size](https://img.shields.io/bundlephobia/minzip/shotmark)](https://bundlephobia.com/package/shotmark)
+[![demo](https://img.shields.io/badge/demo-live-blue)](https://riverdone.github.io/shotmark/)
 
 Lightweight React screenshot annotation library — capture, draw, copy & download in one line.
 
-[中文文档](./README.zh-CN.md)
+[Live Demo](https://riverdone.github.io/shotmark/) · [中文文档](./README.zh-CN.md)
 
 ## Why shotmark?
 
